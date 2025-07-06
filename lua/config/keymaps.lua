@@ -8,3 +8,6 @@ end, { expr = true, desc = "Jump Next" })
 vim.keymap.set({ "i", "s" }, "<C-h>", function()
   return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
 end, { expr = true, desc = "Jump Previous" })
+vim.keymap.set("n", "<leader>fF", function()
+  Snacks.picker.files({ hidden = true, ignored = true })
+end, { desc = "Find in files in dir" })
